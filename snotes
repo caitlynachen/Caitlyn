@@ -1,0 +1,59 @@
+#include <iostream>
+
+using namespace std;
+
+
+
+int main()
+{
+    //freopen ("snotes.in", "r", stdin);
+        //freopen ("snotes.out", "w", stdout);
+
+    int N; //number of notes
+    int Q; //number of questions
+    int total=0;
+    int beats[N]; //how long is each note in order
+    int song[total];
+    int questions[Q]; //at this beat, what note is playing?
+
+
+
+
+    cin >> N;
+    cin >> Q;
+
+
+    for (int i=1; i<=N; i++){
+        cin >> beats[i];
+    }
+
+
+
+
+    for (int i=0; i<Q; i++){
+        cin >> questions[i];
+    }
+
+    for(int i=1; i<=N; i++){
+        total += beats[i];
+    }
+
+    for(int i=1; i<=N; i++){
+
+        for(int j=0; j<total; j++){
+          if(beats[i]>0){
+            song[j] = i;
+            beats[i]-= 1;
+
+          }
+
+        }
+
+
+
+    }
+
+    for (int i=0; i<Q; i++){
+        cout << song[i];
+    }
+}
