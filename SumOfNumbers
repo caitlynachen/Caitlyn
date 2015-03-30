@@ -1,0 +1,43 @@
+package jrJava.homework4;
+
+public class sumOfNumbers {
+
+	
+	public static void main(String[] args) {
+		
+		System.out.println(sumOfNumbers(4,98,2));
+		System.out.println(sumOfSquares(1,100,3));
+		System.out.println(sumOfProducts(10,55,1));
+		
+	}
+
+	public static int sumOfNumbers(int begin, int end, int increment){
+		int sum = 0;
+		for(int i=begin; i<=end; i=i+increment){
+			sum = sum+i;
+	}
+	return sum;
+	
+	}
+	
+	
+	public static int sumOfSquares(int begin, int end, int increment){
+		int sum1 = 0;
+		for(int i=begin; i<=end; i=i+increment){
+			sum1 = sum1+i*i;
+	
+	}
+		
+	return sum1;
+	
+	}
+	public static int sumOfProducts(int begin, int end, int increment){
+			int sum2 = 0;
+			for(int i=begin; i<=end; i=i+increment){
+				sum2 = sum2+i*(i+1);
+	}
+	return sum2;
+	}
+	
+}
+	
