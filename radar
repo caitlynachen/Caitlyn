@@ -1,0 +1,59 @@
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int palindrome (int num);
+void result (void);
+
+void result(void){
+    int num, temp;
+       scanf("%d",&num);
+        // % is modulus
+    temp = 0;
+       while(true){
+        temp += 1;
+        //temp = temp +1
+        num += palindrome(num);
+        // num = num + palindrome(num)
+
+            if (num==palindrome(num)){
+                    break;
+            }
+               // == the same as
+               // break get out of while loop
+        }
+       printf("%d %d", temp, num);
+}
+
+int palindrome (int num){
+    int temp, numCopy, placeValue, radarFinal;
+    numCopy = num;
+    radarFinal = 0;
+    temp = 0;
+       while(true){
+        numCopy = numCopy/10;
+        temp += 1;
+            if (numCopy<10){
+                    break;
+            }
+       }
+       while(temp>=0){
+            placeValue=num % 10;
+            int i;
+               for (i=0;i<temp;i++){
+                    placeValue = placeValue * 10;
+               }
+            temp -= 1;
+            num /= 10;
+            radarFinal += placeValue;
+       }
+       return (radarFinal);
+}
+int main(){
+    freopen("radar.in","r",stdin);
+    freopen("radar.out","w",stdout);
+
+   result();
+   getchar();
+   cout<<"\n";
+
+}
