@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int x = 8*4;
+    cout << x << endl;
+
+    int y = 81/3;
+    cout <<y <<endl;
+
+    int z= 81%2;
+    // % gives the module
+    cout <<z << endl;
+
+    int a = 4+3*7;
+    //follows order of operation
+    cout<< a;
+
+
+    return 0;
+}
