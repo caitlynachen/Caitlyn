@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void main() {
+    int bestrate, bestj, i, j, k, n, t, r[1000+1];
+    int evenlydistribute, leftover;
+    FILE *fin  = fopen ("icow.in", "r");
+    FILE *fout = fopen ("icow.out", "w");
+
+    fscanf (fin, "%d %d", &n, &t);
+
+    for (i = 0; i < n; i++)
+        fscanf (fin, "%d", &r[i]);
+
+   for (i = 0; i < t; i++) {         /* play t songs */
+        /* find highest rated song */
+        bestrate = -1;
+        for (j = 0; j < n; j++) {
+            if (r[j] > bestrate) {   /* best, lowest index */
+                bestj = j;
+                bestrate = r[j];
+            }
+        }
+        fprintf (fout, "%d\n", bestj+1);        /* play it */
+        evenlydistribute = r[bestj]/(n-1);
+        leftover = r[bestj] % (n-1);
+        for (j = 0; j < n; j++)
+            if (j != bestj)
+                r[j] += evenlydistribute;
+        for (k = j = 0; j < leftover; j++, k++)  {
+            if (j == bestj) k++;
+            r[k]++;
+        }
+        cout << r[bestj];
+        r[bestj] = 0;
+
+    }
+}
