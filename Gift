@@ -1,0 +1,99 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int np;
+
+string giver;
+int giverAmount;
+int giverPeople;
+
+int accountStart[2001];
+int account[2001];
+string names[21];
+string receiver[21];
+
+
+int main() {
+	
+	  
+        freopen("gift1.in", "r", stdin);
+      freopen("gift1.out", "w", stdout);
+    
+
+	
+	cin >> np;
+	
+	for(int i=0; i<np; i++){
+		cin >> names[i];
+	}
+	
+	for(int i=0; i<np; i++){
+	
+		cin >> giver;
+		
+		for(int m=0; m<np; m++){
+		
+		
+			if(names[m] == giver){
+				cin >> giverAmount;
+				accountStart[m] = giverAmount;
+				
+				cin >> giverPeople; 
+				
+				 for(int j=0; j<giverPeople; j++){
+				 	cin >> receiver[j];
+				 	
+				 	for(int k=0; k< np; k++){
+				
+						if(receiver[j] ==names[k]){
+							
+							if(giverPeople!=0){
+							
+				 			
+				 	 			account[k] += giverAmount/giverPeople;
+							}
+							
+					
+						}
+					}
+				
+			
+			 	}
+				
+				if(giverPeople!= 0){
+				
+				
+				account[m] += giverAmount%giverPeople;
+			
+				}
+				
+				else{
+					
+					account[m] += giverAmount;
+				}
+	  		}
+	  		
+	  	}
+			
+	}
+	
+	for(int i=0; i<np; i++){
+		
+			cout<< names[i];
+			cout << " ";
+			cout<< account[i] - accountStart[i]<<endl;
+			
+			
+		
+		
+		
+		
+	}
+	
+	
+	
+}
+
+
