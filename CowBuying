@@ -1,0 +1,72 @@
+#include <iostream>
+#include <algorithm>
+#include <utility>
+
+using namespace std;
+
+typedef long long ll;
+
+//kinds of chocolate
+int n;
+//budget
+int b;
+
+// per chocolate
+pair<ll, ll> cows[100100];
+
+
+
+int main() {
+	if (fopen("cbuying.in", "r")) {
+        freopen("cbuying.in", "r", stdin);
+        freopen("cbuying.out", "w", stdout);
+    }
+    
+    
+    
+    cin>> n;
+    cin>> b;
+    //cout<<"\a";
+    for(int i=0; i<n; i++){
+    	
+    	cin >> cows[i].first >> cows[i].second;
+    	
+	}
+	
+	sort(cows, cows+n);
+	
+	int count = 0;
+	//cout << "\a";
+	while(true){
+	
+	
+		for(int i=0; i<n; i++){
+			for(int j=0; j<cows[i].second; j++){
+				b -= cows[i].first;
+				
+				
+					if(b<= 0 ){
+						goto outside;
+						
+					}
+		
+					else{
+						count++;
+						continue;
+					}
+			}
+		}
+		
+	
+	}
+	outside:
+	cout << count << endl;
+	
+	
+	
+}
+
+
+
+
+
