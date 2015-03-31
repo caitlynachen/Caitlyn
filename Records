@@ -1,0 +1,55 @@
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+int n;
+string groups[1001];
+string str[3];
+
+
+int main() {
+	
+	  // freopen("records.in", "r", stdin);
+       // freopen("records.out", "w", stdout);
+       
+       cin >> n; 
+       
+       
+     for(int i=0; i<n; i++){
+     	cin>> str[0];
+     	cin>> str[1];
+     	cin>> str[2];
+     	std:: sort (str, str+3);
+		groups[i] = str[0] +" "+str[1] +" " +str[2];
+	
+     	
+	 }
+	 
+	 int best =0;
+	 int count = 0;
+	 for(int i=0; i< n; i++){
+	 	for(int j=0; j<n; j++){
+	 		if(groups[i] == groups[j]){
+	 			count++;
+			 }
+			 
+		 }
+		 
+		 if(best <count ){
+		 	best = count;
+		 }
+	 	
+	 }
+       
+       
+       
+  
+       cout<< best << endl;
+       
+       
+       
+       
+	
+}
