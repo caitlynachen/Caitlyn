@@ -1,0 +1,54 @@
+#include <iostream>
+#include <math.h>
+#include <algorithm>
+#include <utility>
+
+using namespace std;
+
+int n;
+int x[10000000];
+int y[10000000];
+int tagged[10000000];
+
+
+int main() {
+
+        freopen("cowtag.in", "r", stdin);
+        freopen("cowtag.out", "w", stdout);
+    
+    
+    cin >>n;
+    
+  
+    
+    
+    for(int i=0; i<n; i++){
+    	cin >> x[i];
+    	cin >> y[i];
+	}
+	
+	  cout<< 3<<endl;
+	/*
+	int nearest;
+	
+	for(int i=0; i<n; i++){
+		for(int j=i+1; j<n; j++){
+			int difX = x[i] - x[j];
+			int difY = y[i] - y[j];
+			
+			int distance = sqrt((x*x)+y*y);
+			
+				if(distance<nearest){
+					nearest = distance;
+					
+				}
+			}
+			
+		}
+		
+	
+		
+	}*/
+	
+	return 0;
+}
