@@ -1,0 +1,29 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+int n;
+int a;
+int b;
+
+int main() {
+
+        freopen("squares.in", "r", stdin);
+        freopen("squares.out", "w", stdout);
+    
+	
+	cin >> n;
+	int count =0;
+	
+	for(int a=1; a<=500; a++){
+		for(int b=1; b<=a; b++){
+			if((a*a)==(b*b)+n){
+				count ++;				
+			}
+		}
+	}
+	
+	cout<< count;
+	
+	return 0;
+}
