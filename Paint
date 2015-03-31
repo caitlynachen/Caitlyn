@@ -1,0 +1,62 @@
+#include <iostream>
+
+using namespace std;
+
+int nCow[200][200];
+int row [200];
+int col [200];
+int d1 [300];
+int d2 [300];
+int n;
+int k;
+int coun=0;
+
+int main() {
+	if (fopen("paint2.in", "r")) {
+        freopen("paint2.in", "r", stdin);
+        freopen("paint2.out", "w", stdout);
+    }
+    
+    cin>>n;
+    cin>>k;
+    
+    for(int i=0; i<k; i++){
+    	int r, c;
+    	cin >>r;
+    	cin >>c;
+    	
+    	if(nCow[--r][--c]){
+    		continue;
+		}
+		
+		coun++;
+		
+		nCow[r][c]++;
+		col[c]++;
+		row[r]++;
+		d1[r+c]++;
+		d2[r-c+100]++;
+	}
+	
+	int ans = 0;
+	
+	for(int i=0; i<n; i++){
+		for(int j=0; j<n; j++){
+			if(row[i]+col[j]+d1[i+j]+d2[i-j+100]-3*nCow[i][j] == coun){
+				ans++;
+			}
+		}
+	}
+    
+    
+    
+    
+    
+    cout << ans << endl;
+    
+    
+    
+    
+    
+	return 0;
+}
